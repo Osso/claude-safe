@@ -3,5 +3,14 @@ name = "claude-safe"
 version = "0.1.0"
 edition = "2024"
 
+[lib]
+name = "claude_safe"
+path = "src/lib.rs"
+
+[[bin]]
+name = "claude-safe"
+path = "src/main.rs"
+
 [dependencies]
+tokio = { version = "1", features = ["process", "io-util"] }
 atty = "0.2"
