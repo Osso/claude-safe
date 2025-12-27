@@ -13,10 +13,13 @@ fn main() {
     }
 
     let disallowed = claude_safe::disallowed_tools();
+    let is_print_mode = args.iter().any(|a| a == "-p" || a == "--print");
 
     let mut cmd = Command::new("claude");
     cmd.arg("--disallowedTools").arg(&disallowed);
-    cmd.arg("--no-session-persistence");
+    if is_print_mode {
+        cmd.arg("--no-session-persistence");
+    }
     cmd.args(&args);
 
     if !stdin_content.is_empty() {
