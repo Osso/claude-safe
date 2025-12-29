@@ -2,10 +2,19 @@ use std::process::Stdio;
 use tokio::io::AsyncWriteExt;
 use tokio::process::Command;
 
-/// Disallowed tools for safe execution
+/// Disallowed tools for safe execution (read-only mode)
 const DISALLOWED_TOOLS: &[&str] = &[
-    // Built-in tools
+    // Shell execution
     "Bash",
+    // File modification
+    "Write",
+    "Edit",
+    "NotebookEdit",
+    // Agent/skill execution
+    "Task",
+    "Skill",
+    // Process management
+    "KillShell",
     // Browser MCP
     "mcp__browsermcp__browser_navigate",
     "mcp__browsermcp__browser_click",
