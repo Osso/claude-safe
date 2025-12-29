@@ -2,8 +2,10 @@ use std::process::Stdio;
 use tokio::io::AsyncWriteExt;
 use tokio::process::Command;
 
-/// Disallowed MCP tools for safe execution
+/// Disallowed tools for safe execution
 const DISALLOWED_TOOLS: &[&str] = &[
+    // Built-in tools
+    "Bash",
     // Browser MCP
     "mcp__browsermcp__browser_navigate",
     "mcp__browsermcp__browser_click",
