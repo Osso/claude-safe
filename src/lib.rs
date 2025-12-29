@@ -4,6 +4,7 @@ use tokio::process::Command;
 
 /// Disallowed MCP tools for safe execution
 const DISALLOWED_TOOLS: &[&str] = &[
+    // Browser MCP
     "mcp__browsermcp__browser_navigate",
     "mcp__browsermcp__browser_click",
     "mcp__browsermcp__browser_snapshot",
@@ -16,6 +17,13 @@ const DISALLOWED_TOOLS: &[&str] = &[
     "mcp__browsermcp__browser_go_back",
     "mcp__browsermcp__browser_go_forward",
     "mcp__browsermcp__browser_get_console_logs",
+    // Nushell MCP
+    "mcp__nushell__execute",
+    // Persistent shell MCP
+    "mcp__persistent-shell__list_sessions",
+    "mcp__persistent-shell__execute",
+    "mcp__persistent-shell__create_session",
+    "mcp__persistent-shell__close_session",
 ];
 
 /// Call Claude CLI with safety restrictions (no MCP tools, no session persistence)
