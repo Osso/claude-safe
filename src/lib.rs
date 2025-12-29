@@ -2,14 +2,19 @@ use std::process::Stdio;
 use tokio::io::AsyncWriteExt;
 use tokio::process::Command;
 
-/// Disallowed tools for safe execution (read-only mode)
+/// Disallowed tools for safe execution (web-only mode)
 const DISALLOWED_TOOLS: &[&str] = &[
     // Shell execution
     "Bash",
-    // File modification
+    // File operations
+    "Read",
     "Write",
     "Edit",
     "NotebookEdit",
+    "Glob",
+    "Grep",
+    // Code intelligence
+    "LSP",
     // Agent/skill execution
     "Task",
     "Skill",
