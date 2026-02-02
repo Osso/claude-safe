@@ -60,6 +60,10 @@ const DISALLOWED_TOOLS: &[&str] = &[
     "mcp__persistent-shell__execute",
     "mcp__persistent-shell__create_session",
     "mcp__persistent-shell__close_session",
+    // Memory MCP
+    "mcp__claude-memory__prompt_search",
+    "mcp__claude-memory__answer_search",
+    "mcp__claude-memory__memory_write",
 ];
 
 /// Call Claude CLI with safety restrictions (no MCP tools, no session persistence)
