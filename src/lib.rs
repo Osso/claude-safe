@@ -18,9 +18,11 @@ const DISALLOWED_TOOLS: &[&str] = &[
     // Agent/skill execution
     "Task",
     "Skill",
-    // Process management
+    // Process/task management
     "KillShell",
-    // Browser MCP
+    "TaskOutput",
+    "TaskStop",
+    // Browser MCP (browsermcp)
     "mcp__browsermcp__browser_navigate",
     "mcp__browsermcp__browser_click",
     "mcp__browsermcp__browser_snapshot",
@@ -33,6 +35,24 @@ const DISALLOWED_TOOLS: &[&str] = &[
     "mcp__browsermcp__browser_go_back",
     "mcp__browsermcp__browser_go_forward",
     "mcp__browsermcp__browser_get_console_logs",
+    // Browser MCP (claude-in-chrome)
+    "mcp__claude-in-chrome__javascript_tool",
+    "mcp__claude-in-chrome__read_page",
+    "mcp__claude-in-chrome__find",
+    "mcp__claude-in-chrome__form_input",
+    "mcp__claude-in-chrome__computer",
+    "mcp__claude-in-chrome__navigate",
+    "mcp__claude-in-chrome__resize_window",
+    "mcp__claude-in-chrome__gif_creator",
+    "mcp__claude-in-chrome__upload_image",
+    "mcp__claude-in-chrome__get_page_text",
+    "mcp__claude-in-chrome__tabs_context_mcp",
+    "mcp__claude-in-chrome__tabs_create_mcp",
+    "mcp__claude-in-chrome__update_plan",
+    "mcp__claude-in-chrome__read_console_messages",
+    "mcp__claude-in-chrome__read_network_requests",
+    "mcp__claude-in-chrome__shortcuts_list",
+    "mcp__claude-in-chrome__shortcuts_execute",
     // Nushell MCP
     "mcp__nushell__execute",
     // Persistent shell MCP
