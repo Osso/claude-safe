@@ -12,15 +12,8 @@ fn main() {
         io::stdin().read_to_string(&mut stdin_content).ok();
     }
 
-    let disallowed = claude_safe::disallowed_tools();
-    let is_print_mode = args.iter().any(|a| a == "-p" || a == "--print");
-
     let mut cmd = Command::new("claude");
-    cmd.arg("--disallowedTools").arg(&disallowed);
-    if is_print_mode {
-        cmd.arg("--no-session-persistence");
-    }
-    cmd.args(&args);
+    cmd.args(claude_safe::safe_cli_args(&args));
 
     if !stdin_content.is_empty() {
         cmd.stdin(Stdio::piped());

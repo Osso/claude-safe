@@ -12,5 +12,5 @@ name = "claude-safe"
 path = "src/main.rs"
 
 [dependencies]
-tokio = { version = "1", features = ["process", "io-util"] }
+tokio = { version = "1", features = ["process", "io-util", "rt"] }
 atty = "0.2"
